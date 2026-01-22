@@ -186,7 +186,7 @@ class TemperatureGUI(tk.Tk):
             row=0,
             label_text="数据文件：",
             var=self.data_file_var,
-            filetypes=[("文本文件", "*.txt"), ("所有文件", "*.*")],
+            filetypes=[("数据文件", "*.txt;*.log"), ("文本文件", "*.txt"), ("所有文件", "*.*")],
             select_dir=False,
         )
 
@@ -406,10 +406,19 @@ class TemperatureGUI(tk.Tk):
             return
 
         try:
-            # macOS 使用 open
             import subprocess
-
-            subprocess.run(["open", str(path)], check=False)
+            import sys
+            
+            # 根据操作系统使用不同的命令
+            if sys.platform == "win32":
+                # Windows 使用 explorer
+                subprocess.run(["explorer", str(path)], check=False)
+            elif sys.platform == "darwin":
+                # macOS 使用 open
+                subprocess.run(["open", str(path)], check=False)
+            else:
+                # Linux 使用 xdg-open
+                subprocess.run(["xdg-open", str(path)], check=False)
         except Exception as e:
             messagebox.showerror("错误", f"无法打开输出目录：{e}")
 

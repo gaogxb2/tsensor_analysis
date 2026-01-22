@@ -20,7 +20,7 @@ from typing import List, Dict, Tuple, Optional
 
 def parse_data_file(file_path: str) -> Tuple[List[Dict[int, float]], List[str]]:
     """
-    解析data1.txt文件，按#####数字#####分块，提取valid=1的chnl和temp数据
+    解析data1.txt文件，按#####数字#####分块，提取vaild=1的chnl和temp数据
     
     Returns:
         Tuple[List[Dict[int, float]], List[str]]: 
@@ -51,14 +51,14 @@ def parse_data_file(file_path: str) -> Tuple[List[Dict[int, float]], List[str]]:
                 current_title = match_separator.group(1)  # 提取分隔符中的数字
                 continue
             
-            # 解析数据行: chnl X, valid Y, temp Z
-            match = re.match(r'chnl\s+(\d+),\s+valid\s+(\d+),\s+temp\s+([-\d.]+)', line)
+            # 解析数据行: chnl X, vaild Y, temp Z
+            match = re.match(r'chnl\s+(\d+),\s+vaild\s+(\d+),\s+temp\s+([-\d.]+)', line)
             if match:
                 chnl = int(match.group(1))
                 valid = int(match.group(2))
                 temp = float(match.group(3))
                 
-                # 只保存valid=1的数据
+                # 只保存vaild=1的数据
                 if valid == 1:
                     current_block[chnl] = temp
     
