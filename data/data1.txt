@@ -1,0 +1,27 @@
+#####1#####
+[XXXX] xxxx
+[XXX] xxxxx
+[XXXX] xxxx
+[XXX] xxxxx
+[XXXX] xxxx
+[XXX] xxxxx
+chnl 0, valid 1, temp -0.1
+chnl 1, valid 1, temp 99
+chnl 2, valid 0, temp 5
+chnl 3, valid 1, temp 50
+chnl 4, valid 1, temp 11
+chnl 5, valid 1, temp 21
+
+#####2#####
+[XXXX] xxxx
+[XXxX] xxxxx
+[XXXxX] xxxx
+[XXXx] xxxxx
+[XXXxX] xxxx
+[XXX] xxxxx
+chnl 0, valid 1, temp -10
+chnl 1, valid 1, temp 9
+chnl 2, valid 0, temp 5
+chnl 3, valid 1, temp 5
+chnl 4, valid 0, temp 11
+chnl 5, valid 1, temp 233
