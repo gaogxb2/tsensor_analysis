@@ -85,7 +85,7 @@ def read_template_mapping(template_path: str) -> Tuple[Dict[Tuple[int, int], int
         raise FileNotFoundError(f"模板文件不存在: {template_path}")
     
     wb = load_workbook(template_file)
-    ws = wb['sheet1']
+    ws = wb['Sheet1']
     
     mapping = {}  # {(row, col): chnl}
     max_row = 0
